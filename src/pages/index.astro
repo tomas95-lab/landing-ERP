@@ -2,10 +2,38 @@
 import '../styles/global.css';
 // Component Imports
 import Button from '../components/Button.astro';
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/basics/astro-components/
+import Hero from './hero.astro';
+import Benefits from './benefits.astro';
+import Features from './fetures.astro';
+import Intelligence from './intelligence.astro';
+import Testimonials from './testimonials.astro';
 ---
+
+<style>
+  /* Global animation styles */
+  .fade-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .fade-right {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .fade-left {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .fade-in {
+    opacity: 1;
+    transform: translate(0);
+  }
+</style>
 
 <html lang="en">
 	<head>
@@ -17,9 +45,18 @@ import Button from '../components/Button.astro';
 	</head>
 
 	<body>
-		<div class="grid place-items-center h-screen content-center">
-			<Button>Tailwind Button in Astro!</Button>
-			<a href="/markdown-page" class="p-4 underline">Markdown is also supported...</a>
-		</div>
+		<div class="relative min-h-screen w-full overflow-hidden">
+			<!-- Background gradient effect -->
+			<div class="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] -z-10"></div>
+			<div class="absolute w-96 h-96 blur-3xl bg-gradient-to-r from-blue-400/30 to-purple-400/30 -top-10 -right-10 rounded-full"></div>
+			<div class="absolute w-96 h-96 blur-3xl bg-gradient-to-r from-blue-400/20 to-purple-400/20 -bottom-0 -left-10 rounded-full"></div>
+			<div class="relative z-10">
+			  <Hero />
+			  <Benefits></Benefits>
+			  <Features></Features>
+			  <Intelligence></Intelligence>
+			  <Testimonials></Testimonials>
+			</div>
+		  </div>
 	</body>
 </html>
