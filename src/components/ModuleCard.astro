@@ -5,7 +5,7 @@ export interface Props {
   imageSrc: string;
   imageAlt: string;
   reverse?: boolean;
-  background?: string; // Nuevo prop para alternar fondos
+  background?: string;
 }
 
 const { title, description, imageSrc, imageAlt, reverse = false, background = "#FFFFFF" } = Astro.props;

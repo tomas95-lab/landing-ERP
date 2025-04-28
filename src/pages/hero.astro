@@ -1,12 +1,21 @@
 ---
-import DemoDialog from "@/components/Demomodal.astro";
 ---
+<style>
+  @keyframes fade-in {
+    0% { opacity: 0; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out;
+  }
+</style>
 
 <section class="fade-item bg-gradient-to-b from-white to-slate-100">
   <div class="relative container mx-auto px-4 py-20 lg:py-32">
     <div class="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] z-10"></div>
     <div class="absolute w-96 h-96 blur-3xl bg-gradient-to-r from-blue-400/30 to-purple-400/30 top-10 right-10 rounded-full z-0"></div>
     <div class="absolute w-96 h-96 blur-3xl bg-gradient-to-r from-blue-400/20 to-purple-400/20 bottom-20 left-10 rounded-full z-0"></div>
+
     <!-- Top badge -->
     <div class="flex justify-center mb-8 fade-right">
       <a href="#" class="group rounded-full px-1 py-1 bg-white border border-gray-200 shadow-md hover:shadow-lg transition-all">
@@ -29,14 +38,60 @@ import DemoDialog from "@/components/Demomodal.astro";
       <h1 class="mb-8 text-5xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-blue-800 to-gray-900">
         Pilot Your Construction Projects to Success
       </h1>
-      
+
       <p class="mb-12 text-xl text-gray-600 md:text-2xl max-w-3xl mx-auto leading-relaxed">
         Streamline planning, supplier management, and financial tracking — all from a single, powerful ERP platform.
       </p>
 
       <!-- CTA Buttons -->
-      <DemoDialog client:load />
-      
+      <div>
+        <button
+          id="openDemoModal"
+          class="inline-flex cursor-pointer items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-500 to-indigo-600 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300"
+          type="button"
+        >
+          Explore Demo
+        </button>
+
+        <div id="demoModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
+          <div class="bg-white rounded-3xl shadow-2xl w-full max-w-md p-8 relative animate-fade-in">
+            <button id="closeDemoModal" type="button" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition cursor-pointer">
+              ✕
+            </button>
+
+            <div class="flex flex-col items-center text-center">
+              <div class="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-blue-100">
+                <svg class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75M3.697 16.126c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L3.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">Access the Public Demo</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">
+                You’re about to enter a shared demo environment.<br/>
+                Please avoid uploading real or sensitive information.
+              </p>
+            </div>
+
+            <div class="mt-8 flex flex-col sm:flex-row gap-3">
+              <a 
+                href="https://erp-demo-rzrt.vercel.app/"
+                target="_blank"
+                class="flex-1 inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-blue-500 to-indigo-600 px-5 py-3 text-sm font-semibold text-white shadow-md hover:shadow-lg transition"
+              >
+                Accept
+              </a>
+              <button 
+                id="cancelButton"
+                type="button"
+                class="flex-1 inline-flex items-center cursor-pointer justify-center rounded-xl border border-gray-300 bg-white px-5 py-3 text-sm font-semibold text-gray-700 shadow-sm hover:bg-gray-100 transition"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="mt-6 relative z-50">
         <a 
           href="mailto:tomasruiz.dev@gmail.com?subject=Support%20Request&body=Hello%2C%20I%20need%20help%20with%20the%20ERP%20platform.%20Could%20you%20please%20assist%20me%3F" 
@@ -44,7 +99,30 @@ import DemoDialog from "@/components/Demomodal.astro";
         >
           Need help? Contact us
         </a>
-      </div>      
+      </div>
     </div>
   </div>
 </section>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const openButton = document.getElementById('openDemoModal');
+    const closeButton = document.getElementById('closeDemoModal');
+    const cancelButton = document.getElementById('cancelButton');
+    const modal = document.getElementById('demoModal');
+
+    if (openButton && closeButton && modal && cancelButton) {
+      openButton.addEventListener('click', () => {
+        modal.classList.remove('hidden');
+      });
+
+      closeButton.addEventListener('click', () => {
+        modal.classList.add('hidden');
+      });
+
+      cancelButton.addEventListener('click', () => {
+        modal.classList.add('hidden');
+      });
+    }
+  });
+</script>
