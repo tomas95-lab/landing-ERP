@@ -38,18 +38,26 @@ import Testimonials from './testimonials.astro';
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro + TailwindCSS</title>
+		<title>SitePilot ERP - Streamline Construction Management with Smart Tools</title>
+		<meta name="description" content="SitePilot ERP is your all-in-one solution for construction management. Automate tasks, manage suppliers, track finances, and boost productivity with ease." />
+		<meta name="keywords" content="ERP, construction management, project management, supplier management, financial tracking, automation, SitePilot ERP" />
+		<meta name="author" content="SitePilot Team" />
+		<meta property="og:title" content="SitePilot ERP - Streamline Construction Management with Smart Tools" />
+		<meta property="og:description" content="SitePilot ERP is your all-in-one solution for construction management. Automate tasks, manage suppliers, track finances, and boost productivity with ease." />
+		<meta property="og:image" content="/path-to-preview-image.jpg" />
+		<meta property="og:url" content="https://yourwebsite.com" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="SitePilot ERP - Streamline Construction Management with Smart Tools" />
+		<meta name="twitter:description" content="SitePilot ERP is your all-in-one solution for construction management. Automate tasks, manage suppliers, track finances, and boost productivity with ease." />
+		<meta name="twitter:image" content="/path-to-preview-image.jpg" />
 	</head>
 
 	<body>
 		<div class="relative min-h-screen w-full overflow-hidden">
 			<!-- Background gradient effect -->
-			<div class="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] -z-10"></div>
-			<div class="absolute w-96 h-96 blur-3xl bg-gradient-to-r from-blue-400/30 to-purple-400/30 -top-10 -right-10 rounded-full"></div>
-			<div class="absolute w-96 h-96 blur-3xl bg-gradient-to-r from-blue-400/20 to-purple-400/20 -bottom-0 -left-10 rounded-full"></div>
 			<div class="relative z-10">
 			  <Hero />
 			  <Benefits></Benefits>
@@ -57,6 +65,6 @@ import Testimonials from './testimonials.astro';
 			  <Intelligence></Intelligence>
 			  <Testimonials></Testimonials>
 			</div>
-		  </div>
+		</div>
 	</body>
 </html>

@@ -1,29 +1,78 @@
-<section class="py-24 bg-gradient-to-b to-blue-100 from-white fade-item">
+<style>
+  .fade-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .fade-right {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .fade-left {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .fade-in {
+    opacity: 1;
+    transform: translate(0);
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null,
+      threshold: 0.1,
+      rootMargin: '-50px 0px'
+    });
+
+    document.querySelectorAll('.fade-item, .fade-left, .fade-right').forEach(el => {
+      observer.observe(el);
+    });
+  });
+</script>
+
+<section class="py-24 bg-gradient-to-b from-white to-blue-100">
   <div class="container mx-auto px-6">
-    <div class="text-center mb-16 fade-right">
+
+    <!-- Section Header -->
+    <div class="text-center mb-16 fade-item">
       <h1 class="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-800 mb-6">
         What Our Clients Say
       </h1>
-      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+      <p class="text-xl text-gray-600 md:text-2xl max-w-2xl mx-auto leading-relaxed">
         Hear from real businesses that have transformed their operations with SitePilot ERP.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 fade-left">
+    <!-- Testimonials Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       
-      <div class="p-6 bg-white rounded-lg shadow-md  flex flex-col justify-between fade-item">
-        <p class="text-gray-600 italic">"Since implementing SitePilot, we've cut our project delivery times by 30%. It's now the backbone of our daily operations."</p>
-        <h3 class="text-lg font-bold mt-4">- Lucas Fernández, Project Director at NovaBuild</h3>
+      <div class="p-6 bg-white rounded-lg shadow-md flex flex-col justify-between fade-right">
+        <p class="text-gray-600 italic mb-4">"Since implementing SitePilot, we've cut our project delivery times by 30%. It's now the backbone of our daily operations."</p>
+        <h3 class="text-lg font-bold text-gray-900">- Lucas Fernández, Project Director at NovaBuild</h3>
       </div>
 
-      <div class="p-6 bg-white rounded-lg shadow-md  flex flex-col justify-between fade-item">
-        <p class="text-gray-600 italic">"Managing suppliers used to be a nightmare. Now we track everything in real-time — orders, deliveries, payments — without spreadsheets."</p>
-        <h3 class="text-lg font-bold mt-4">- Valeria Costa, Procurement Lead at UrbanCore</h3>
+      <div class="p-6 bg-white rounded-lg shadow-md flex flex-col justify-between fade-item">
+        <p class="text-gray-600 italic mb-4">"Managing suppliers used to be a nightmare. Now we track everything in real-time — orders, deliveries, payments — without spreadsheets."</p>
+        <h3 class="text-lg font-bold text-gray-900">- Valeria Costa, Procurement Lead at UrbanCore</h3>
       </div>
 
-      <div class="p-6 bg-white rounded-lg shadow-md  flex flex-col justify-between fade-item">
-        <p class="text-gray-600 italic">"The financial module helped us recover over 15% in missed invoices. Plus, the dashboard gives us cashflow visibility like never before."</p>
-        <h3 class="text-lg font-bold mt-4">- Diego Morales, CFO at PrimeConstruct</h3>
+      <div class="p-6 bg-white rounded-lg shadow-md flex flex-col justify-between fade-left">
+        <p class="text-gray-600 italic mb-4">"The financial module helped us recover over 15% in missed invoices. Plus, the dashboard gives us cashflow visibility like never before."</p>
+        <h3 class="text-lg font-bold text-gray-900">- Diego Morales, CFO at PrimeConstruct</h3>
       </div>
 
     </div>
