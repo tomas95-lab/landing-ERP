@@ -1,71 +1,57 @@
 ---
 import '../styles/global.css';
-// Component Imports
-import Button from '../components/Button.astro';
 import Hero from './hero.astro';
 import Benefits from './benefits.astro';
 import Features from './fetures.astro';
 import Intelligence from './intelligence.astro';
 import Testimonials from './testimonials.astro';
-import logo from '../public/logo.png';
+import logo from '/public/logo.png';
 ---
 
 <style>
-  /* Global animation styles */
-  .fade-item {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-  }
-
-  .fade-right {
-    opacity: 0;
-    transform: translateX(-50px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-  }
-
-  .fade-left {
-    opacity: 0;
-    transform: translateX(50px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-  }
-
-  .fade-in {
-    opacity: 1;
-    transform: translate(0);
-  }
+.fade-item { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.fade-right { opacity: 0; transform: translateX(-50px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.fade-left { opacity: 0; transform: translateX(50px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.fade-in { opacity: 1; transform: translate(0); }
 </style>
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/svg+xml" href= "/public/logo.png"/>
-		<meta name="generator" content={Astro.generator} />
-		<title>SitePilot ERP - Streamline Construction Management with Smart Tools</title>
-		<meta name="description" content="SitePilot ERP is your all-in-one solution for construction management. Automate tasks, manage suppliers, track finances, and boost productivity with ease." />
-		<meta name="keywords" content="ERP, construction management, project management, supplier management, financial tracking, automation, SitePilot ERP" />
-		<meta name="author" content="SitePilot Team" />
-		<meta property="og:title" content="SitePilot ERP - Streamline Construction Management with Smart Tools" />
-		<meta property="og:description" content="SitePilot ERP is your all-in-one solution for construction management. Automate tasks, manage suppliers, track finances, and boost productivity with ease." />
-		<meta property="og:image" content="/path-to-preview-image.jpg" />
-		<meta property="og:url" content="https://yourwebsite.com" />
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content="SitePilot ERP - Streamline Construction Management with Smart Tools" />
-		<meta name="twitter:description" content="SitePilot ERP is your all-in-one solution for construction management. Automate tasks, manage suppliers, track finances, and boost productivity with ease." />
-		<meta name="twitter:image" content="/path-to-preview-image.jpg" />
-	</head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href={logo.src} type="image/png" />
+  <meta name="generator" content={Astro.generator} />
 
-	<body>
-		<div class="relative min-h-screen w-full overflow-hidden">
-			<!-- Background gradient effect -->
-			<div class="relative z-10">
-			  <Hero />
-			  <Benefits></Benefits>
-			  <Features></Features>
-			  <Intelligence></Intelligence>
-			  <Testimonials></Testimonials>
-			</div>
-		</div>
-	</body>
+  <title>SitePilot ERP - Construction Management Made Simple</title>
+
+  <meta name="description" content="Simplify your construction projects with SitePilot ERP. Manage suppliers, finances, tasks, and projects with a powerful all-in-one platform." />
+  <meta name="keywords" content="ERP software, Construction ERP, Construction Management, Project Management, Supplier Management, Financial Tracking, SitePilot ERP" />
+  <meta name="author" content="SitePilot Team" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://landing-erp-ashy.vercel.app/" />
+  <meta property="og:title" content="SitePilot ERP - Construction Management Made Simple" />
+  <meta property="og:description" content="Simplify your construction projects with SitePilot ERP. Manage suppliers, finances, tasks, and projects with a powerful all-in-one platform." />
+  <meta property="og:image" content="/path-to-preview-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://landing-erp-ashy.vercel.app/" />
+  <meta name="twitter:title" content="SitePilot ERP - Construction Management Made Simple" />
+  <meta name="twitter:description" content="Simplify your construction projects with SitePilot ERP. Manage suppliers, finances, tasks, and projects with a powerful all-in-one platform." />
+  <meta name="twitter:image" content="/path-to-preview-image.jpg" />
+</head>
+
+<body>
+  <div class="relative min-h-screen w-full overflow-hidden">
+    <div class="relative z-10">
+      <Hero />
+      <Benefits />
+      <Features />
+      <Intelligence />
+      <Testimonials />
+    </div>
+  </div>
+</body>
 </html>
