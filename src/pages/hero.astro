@@ -1,8 +1,8 @@
 <section class="fade-item bg-gradient-to-b from-white to-slate-100">
   <div class="relative container mx-auto px-4 py-20 lg:py-32">
-    <div class="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] -z-10"></div>
-    <div class="absolute w-96 h-96 blur-3xl bg-gradient-to-r from-blue-400/30 to-purple-400/30 -top-10 -right-10 rounded-full"></div>
-    <div class="absolute w-96 h-96 blur-3xl bg-gradient-to-r from-blue-400/20 to-purple-400/20 -bottom-20 -left-10 rounded-full"></div>
+    <div class="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] z-10"></div>
+    <div class="absolute w-96 h-96 blur-3xl bg-gradient-to-r from-blue-400/30 to-purple-400/30 top-10 right-10 rounded-full z-0"></div>
+    <div class="absolute w-96 h-96 blur-3xl bg-gradient-to-r from-blue-400/20 to-purple-400/20 bottom-20 left-10 rounded-full z-0"></div>
     <!-- Top badge -->
     <div class="flex justify-center mb-8 fade-right">
       <a href="#" class="group rounded-full px-1 py-1 bg-white border border-gray-200 shadow-md hover:shadow-lg transition-all">
@@ -21,7 +21,7 @@
     </div>
 
     <!-- Main content -->
-    <div class="text-center max-w-4xl mx-auto fade-left">
+    <div class="text-center max-w-4xl mx-auto fade-left relative z-50">
       <h1 class="mb-8 text-5xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-blue-800 to-gray-900">
         Pilot Your Construction Projects to Success
       </h1>
@@ -31,7 +31,7 @@
       </p>
 
       <!-- CTA Buttons -->
-      <div class="flex flex-col sm:flex-row gap-4 justify-center fade-item">
+      <div class="flex flex-col sm:flex-row gap-4 justify-center fade-item relative z-50">
         <a href="https://erp-demo-rzrt.vercel.app/" class="inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200">
           Explore Demo
           <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -39,7 +39,7 @@
           </svg>
         </a>
       </div>
-      <div class="mt-6">
+      <div class="mt-6 relative z-50">
         <a 
           href="mailto:tomasruiz.dev@gmail.com?subject=Support%20Request&body=Hello%2C%20I%20need%20help%20with%20the%20ERP%20platform.%20Could%20you%20please%20assist%20me%3F" 
           class="text-sm text-gray-500 hover:text-gray-700 transition"
