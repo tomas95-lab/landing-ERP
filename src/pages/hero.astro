@@ -1,3 +1,7 @@
+---
+import DemoDialog from "@/components/Demomodal.astro";
+---
+
 <section class="fade-item bg-gradient-to-b from-white to-slate-100">
   <div class="relative container mx-auto px-4 py-20 lg:py-32">
     <div class="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] z-10"></div>
@@ -31,14 +35,8 @@
       </p>
 
       <!-- CTA Buttons -->
-      <div class="flex flex-col sm:flex-row gap-4 justify-center fade-item relative z-50">
-        <a href="https://erp-demo-rzrt.vercel.app/" class="inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200">
-          Explore Demo
-          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-          </svg>
-        </a>
-      </div>
+      <DemoDialog client:load />
+      
       <div class="mt-6 relative z-50">
         <a 
           href="mailto:tomasruiz.dev@gmail.com?subject=Support%20Request&body=Hello%2C%20I%20need%20help%20with%20the%20ERP%20platform.%20Could%20you%20please%20assist%20me%3F" 
