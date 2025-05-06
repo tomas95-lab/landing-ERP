@@ -10,22 +10,23 @@
   }
 </style>
 
-<section class="fade-item bg-gradient-to-b from-white to-slate-100">
+<section class="fade-item bg-gradient-to-b from-slate-50 via-white to-blue-50/20 relative overflow-hidden">
+  <div class="absolute inset-0">
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-100/30 via-transparent to-indigo-100/30 animate-gradient"></div>
+    <div class="absolute inset-0 bg-gradient-to-tl from-transparent via-white/90 to-transparent"></div>
+  </div>
   <div class="relative container mx-auto px-4 py-20 lg:py-32">
+    <!-- Gradients -->
     <div class="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] z-10"></div>
     <div class="absolute w-96 h-96 blur-3xl bg-gradient-to-r from-blue-400/30 to-purple-400/30 top-10 right-10 rounded-full z-0"></div>
     <div class="absolute w-96 h-96 blur-3xl bg-gradient-to-r from-blue-400/20 to-purple-400/20 bottom-20 left-10 rounded-full z-0"></div>
 
-    <!-- Top badge -->
-    <div class="flex justify-center mb-8 fade-right">
+    <!-- Badge -->
+    <div class="flex justify-center mb-8 fade-right relative z-20">
       <a href="#" class="group rounded-full px-1 py-1 bg-white border border-gray-200 shadow-md hover:shadow-lg transition-all">
         <div class="flex items-center">
-          <span class="px-4 py-1.5 text-xs font-semibold text-white bg-gradient-to-r from-blue-600 to-blue-700 rounded-full">
-            NEW
-          </span>
-          <span class="px-4 text-sm font-medium text-gray-700">
-            SitePilot ERP launched! See what's new
-          </span>
+          <span class="px-4 py-1.5 text-xs font-semibold text-white bg-gradient-to-r from-blue-600 to-blue-700 rounded-full">NEW</span>
+          <span class="px-4 text-sm font-medium text-gray-700">SitePilot ERP launched! See what's new</span>
           <svg class="w-5 h-5 text-gray-700 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
           </svg>
@@ -33,72 +34,59 @@
       </a>
     </div>
 
-    <!-- Main content -->
-    <div class="text-center max-w-4xl mx-auto fade-left relative z-50">
-      <h1 class="mb-8 text-5xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-blue-800 to-gray-900">
-        Pilot Your Construction Projects to Success
+    <!-- Hero content -->
+    <div class="text-center max-w-4xl mx-auto fade-left relative z-20">
+      <h1 class="mb-6 text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-800 via-indigo-700 to-blue-800">
+        Build smarter. Faster. With SitePilot.
       </h1>
-
-      <p class="mb-12 text-xl text-gray-600 md:text-2xl max-w-3xl mx-auto leading-relaxed">
-        Streamline planning, supplier management, and financial tracking — all from a single, powerful ERP platform.
+      <p class="mb-10 text-xl text-gray-600 md:text-2xl max-w-3xl mx-auto leading-relaxed">
+        Stop struggling with spreadsheets — manage your projects, suppliers and finances from one powerful platform.
       </p>
 
-      <!-- CTA Buttons -->
-      <div>
+      <!-- CTA -->
+      <div class="flex flex-col sm:flex-row justify-center gap-4 mt-6">
+        <!-- Demo button -->
         <button
           id="openDemoModal"
-          class="inline-flex cursor-pointer items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-500 to-indigo-600 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300"
           type="button"
+          class="flex items-center justify-center gap-2 px-6 py-3 text-lg font-semibold text-white bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl shadow hover:shadow-lg hover:-translate-y-0.5 transition duration-300 cursor-pointer"
         >
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" />
+          </svg>
           Explore Demo
         </button>
 
-        <div id="demoModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
-          <div class="bg-white rounded-3xl shadow-2xl w-full max-w-md p-8 relative animate-fade-in">
-            <button id="closeDemoModal" type="button" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition cursor-pointer">
-              ✕
-            </button>
+        <!-- Contact -->
+        <a
+          href="mailto:tomasruiz.dev@gmail.com?subject=I’d%20like%20more%20info%20about%20SitePilot&body=Hi%2C%20I’m%20interested%20in%20learning%20more%20about%20SitePilot.%20Thanks!"
+          class="flex items-center justify-center gap-2 px-6 py-3 text-lg font-semibold text-blue-600 border border-blue-600 rounded-xl hover:bg-blue-50 transition"
+        >
+          <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l9 6 9-6M5 19h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2z"/>
+          </svg>
+          Contact Us
+        </a>
+      </div>
 
-            <div class="flex flex-col items-center text-center">
-              <div class="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-blue-100">
-                <svg class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75M3.697 16.126c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L3.697 16.126zM12 15.75h.007v.008H12v-.008z" />
-                </svg>
-              </div>
-              <h3 class="text-2xl font-bold text-gray-900 mb-2">Access the Public Demo</h3>
-              <p class="text-gray-500 text-sm leading-relaxed">
-                You’re about to enter a shared demo environment.<br/>
-                Please avoid uploading real or sensitive information.
-              </p>
+      <!-- Modal -->
+      <div id="demoModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
+        <div class="bg-white rounded-3xl shadow-2xl w-full max-w-md p-8 relative animate-fade-in">
+          <button id="closeDemoModal" type="button" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition cursor-pointer">✕</button>
+          <div class="text-center">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-blue-100 flex items-center justify-center">
+              <svg class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75M3.697 16.126c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L3.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+              </svg>
             </div>
-
-            <div class="mt-8 flex flex-col sm:flex-row gap-3">
-              <a 
-                href="https://erp-demo-rzrt.vercel.app/"
-                target="_blank"
-                class="flex-1 inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-blue-500 to-indigo-600 px-5 py-3 text-sm font-semibold text-white shadow-md hover:shadow-lg transition"
-              >
-                Accept
-              </a>
-              <button 
-                id="cancelButton"
-                type="button"
-                class="flex-1 inline-flex items-center cursor-pointer justify-center rounded-xl border border-gray-300 bg-white px-5 py-3 text-sm font-semibold text-gray-700 shadow-sm hover:bg-gray-100 transition"
-              >
-                Cancel
-              </button>
+            <h3 class="text-2xl font-bold text-gray-900 mb-2">Access the Public Demo</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">You’re about to enter a shared demo environment. Please avoid uploading real or sensitive information.</p>
+            <div class="mt-6 flex flex-col sm:flex-row gap-3">
+              <a href="https://erp-demo-rzrt.vercel.app/" target="_blank" class="flex-1 inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-blue-500 to-indigo-600 px-5 py-3 text-sm font-semibold text-white shadow-md hover:shadow-lg transition">Accept</a>
+              <button id="cancelButton" type="button" class="flex-1 inline-flex items-center justify-center rounded-xl border border-gray-300 bg-white px-5 py-3 text-sm font-semibold text-gray-700 shadow-sm hover:bg-gray-100 transition">Cancel</button>
             </div>
           </div>
         </div>
-      </div>
-
-      <div class="mt-6 relative z-50">
-        <a 
-          href="mailto:tomasruiz.dev@gmail.com?subject=Support%20Request&body=Hello%2C%20I%20need%20help%20with%20the%20ERP%20platform.%20Could%20you%20please%20assist%20me%3F" 
-          class="text-sm text-gray-500 hover:text-gray-700 transition"
-        >
-          Need help? Contact us
-        </a>
       </div>
     </div>
   </div>
@@ -111,18 +99,9 @@
     const cancelButton = document.getElementById('cancelButton');
     const modal = document.getElementById('demoModal');
 
-    if (openButton && closeButton && modal && cancelButton) {
-      openButton.addEventListener('click', () => {
-        modal.classList.remove('hidden');
-      });
-
-      closeButton.addEventListener('click', () => {
-        modal.classList.add('hidden');
-      });
-
-      cancelButton.addEventListener('click', () => {
-        modal.classList.add('hidden');
-      });
-    }
+    const toggleModal = (show) => modal.classList.toggle('hidden', !show);
+    openButton?.addEventListener('click', () => toggleModal(true));
+    closeButton?.addEventListener('click', () => toggleModal(false));
+    cancelButton?.addEventListener('click', () => toggleModal(false));
   });
 </script>

@@ -21,6 +21,15 @@
     opacity: 1;
     transform: translate(0);
   }
+
+  .card {
+    transition: all 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+  }
 </style>
 
 <script>
@@ -44,35 +53,55 @@
   });
 </script>
 
-<section class="py-24 bg-gradient-to-b from-white to-blue-100">
-  <div class="container mx-auto px-6">
-
+<section class="py-24 bg-gradient-to-b from-slate-50 via-white to-blue-50/40 relative overflow-hidden">
+  <div class="absolute inset-0">
+    <div class="absolute inset-0 bg-gradient-to-tr from-blue-100/20 via-transparent to-indigo-100/20"></div>
+  </div>
+  <div class="container mx-auto px-6 relative">
     <!-- Section Header -->
     <div class="text-center mb-16 fade-item">
-      <h1 class="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-800 mb-6">
+      <h1 class="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-indigo-600 to-blue-800 mb-6">
         What Our Clients Say
       </h1>
-      <p class="text-xl text-gray-600 md:text-2xl max-w-2xl mx-auto leading-relaxed">
-        Hear from real businesses that have transformed their operations with SitePilot ERP.
+      <p class="text-xl text-gray-600 md:text-2xl max-w-2xl mx-auto leading-relaxed text-center">
+        Real teams. Real results. Discover how SitePilot is changing the way businesses work.
       </p>
     </div>
 
     <!-- Testimonials Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
       
-      <div class="p-6 bg-white rounded-lg shadow-md flex flex-col justify-between fade-right">
-        <p class="text-gray-600 italic mb-4">"Since implementing SitePilot, we've cut our project delivery times by 30%. It's now the backbone of our daily operations."</p>
-        <h3 class="text-lg font-bold text-gray-900">- Lucas Fernández, Project Director at NovaBuild</h3>
+      <div class="card bg-white rounded-3xl shadow-xl p-8 fade-right flex flex-col gap-6">
+        <div class="text-blue-600 text-4xl">“</div>
+        <p class="text-gray-700 text-lg leading-relaxed text-justify">
+          SitePilot slashed our delivery time by 30%. It’s no longer just a tool — it’s our operations command center.
+        </p>
+        <div class="pt-2 border-t border-gray-100">
+          <p class="font-semibold text-gray-900">Lucas Fernández</p>
+          <p class="text-sm text-gray-500">Project Director at NovaBuild</p>
+        </div>
       </div>
 
-      <div class="p-6 bg-white rounded-lg shadow-md flex flex-col justify-between fade-item">
-        <p class="text-gray-600 italic mb-4">"Managing suppliers used to be a nightmare. Now we track everything in real-time — orders, deliveries, payments — without spreadsheets."</p>
-        <h3 class="text-lg font-bold text-gray-900">- Valeria Costa, Procurement Lead at UrbanCore</h3>
+      <div class="card bg-white rounded-3xl shadow-xl p-8 fade-item flex flex-col gap-6">
+        <div class="text-blue-600 text-4xl">“</div>
+        <p class="text-gray-700 text-lg leading-relaxed text-justify">
+          Before SitePilot, supplier management was chaos. Now it’s automated, transparent, and spreadsheet-free.
+        </p>
+        <div class="pt-2 border-t border-gray-100">
+          <p class="font-semibold text-gray-900">Valeria Costa</p>
+          <p class="text-sm text-gray-500">Procurement Lead at UrbanCore</p>
+        </div>
       </div>
 
-      <div class="p-6 bg-white rounded-lg shadow-md flex flex-col justify-between fade-left">
-        <p class="text-gray-600 italic mb-4">"The financial module helped us recover over 15% in missed invoices. Plus, the dashboard gives us cashflow visibility like never before."</p>
-        <h3 class="text-lg font-bold text-gray-900">- Diego Morales, CFO at PrimeConstruct</h3>
+      <div class="card bg-white rounded-3xl shadow-xl p-8 fade-left flex flex-col gap-6">
+        <div class="text-blue-600 text-4xl">“</div>
+        <p class="text-gray-700 text-lg leading-relaxed text-justify">
+          We recovered 15% of lost revenue thanks to financial tracking. Cashflow clarity like this is game-changing.
+        </p>
+        <div class="pt-2 border-t border-gray-100">
+          <p class="font-semibold text-gray-900">Diego Morales</p>
+          <p class="text-sm text-gray-500">CFO at PrimeConstruct</p>
+        </div>
       </div>
 
     </div>

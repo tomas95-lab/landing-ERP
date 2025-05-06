@@ -10,25 +10,21 @@ import expenses from "../../public/expenses.png";
 ---
 
 <style>
-  /* Estilos para las animaciones */
   .fade-item {
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.8s ease, transform 0.8s ease;
   }
-  
   .fade-right {
     opacity: 0;
     transform: translateX(-50px);
     transition: opacity 0.8s ease, transform 0.8s ease;
   }
-  
   .fade-left {
     opacity: 0;
     transform: translateX(50px);
     transition: opacity 0.8s ease, transform 0.8s ease;
   }
-  
   .fade-in {
     opacity: 1;
     transform: translate(0);
@@ -36,45 +32,43 @@ import expenses from "../../public/expenses.png";
 </style>
 
 <script>
-  // Configuración y activación del Intersection Observer
   document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          console.log(`Animating: ${entry.target.className}`); // Debug log
           entry.target.classList.add('fade-in');
-          // Opcional: desconectar el observer después de animar
           observer.unobserve(entry.target);
         }
       });
     }, {
-      root: null, // viewport
-      threshold: 0.1, // 10% del elemento debe ser visible
-      rootMargin: '-50px 0px' // empezar cuando el elemento está a 50px de entrar en el viewport
+      threshold: 0.1,
+      rootMargin: '-50px 0px'
     });
-    
-    // Observar todos los elementos con clase de animación
-    document.querySelectorAll('.fade-item, .fade-right, .fade-left').forEach(el => {
+
+    document.querySelectorAll('.fade-item, .fade-left, .fade-right').forEach(el => {
       observer.observe(el);
     });
   });
 </script>
 
-<section class="py-24 bg-gradient-to-b to-white from-blue-50">
-  <div class="container mx-auto px-4">
+<section class="py-24 bg-gradient-to-b from-blue-50/50 via-white to-slate-50/30 relative overflow-hidden">
+  <div class="absolute inset-0">
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-100/20 via-transparent to-indigo-100/20"></div>
+  </div>
+  <div class="container mx-auto relative">
     <div class="text-center mb-16 fade-item">
-      <h1 class="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-800 mb-6">
-        Built to Manage Every Step
+      <h1 class="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-indigo-600 to-blue-700 mb-6">
+        All Your Workflows. One Unified Platform.
       </h1>
       <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-        From planning projects to tracking expenses, SitePilot ERP gives you complete control over your construction operations.
+        From kickoff to handover — SitePilot simplifies, syncs, and supercharges every step of your operations.
       </p>
     </div>
 
     <div class="fade-right">
       <ModuleCard 
-        title="Project & Financial Overview" 
-        description="View your active projects, financial KPIs, and cost tracking in real-time — all from a single powerful dashboard." 
+        title="Smart Dashboard" 
+        description="Get full visibility across your projects, finances, and KPIs — all in one clean, interactive dashboard. Make faster, smarter decisions with data that updates in real time." 
         imageSrc={dashboard.src} 
         imageAlt="Dashboard Overview" 
         background="#FFFFFF"
@@ -84,7 +78,7 @@ import expenses from "../../public/expenses.png";
     <div class="fade-left">
       <ModuleCard 
         title="Project Management" 
-        description="Manage ongoing, pending, and completed projects with full visibility over deadlines, budgets, and assignments." 
+        description="Take control of deadlines, tasks, and budgets with a centralized workspace designed to reduce friction. Know exactly who’s doing what, and what’s falling behind — in seconds." 
         imageSrc={projects.src} 
         imageAlt="Projects Management" 
         reverse={true} 
@@ -94,8 +88,8 @@ import expenses from "../../public/expenses.png";
 
     <div class="fade-right">
       <ModuleCard 
-        title="Project Planning & Collaboration" 
-        description="Assign tasks, manage project phases, upload designs, and collaborate in real time." 
+        title="Project Planner" 
+        description="Map out phases, assign owners, attach drawings, and collaborate in real time. It’s your team’s live blueprint — aligned, connected, and always up to date." 
         imageSrc={planner.src} 
         imageAlt="Project Planner" 
         background="#FFFFFF"
@@ -104,8 +98,8 @@ import expenses from "../../public/expenses.png";
 
     <div class="fade-left">
       <ModuleCard 
-        title="Supplier Management" 
-        description="Monitor supplier activities, performance metrics, and manage onboarding processes easily." 
+        title="Supplier Hub" 
+        description="Ditch the spreadsheets. Add, manage, and evaluate all your suppliers in one place with built-in onboarding, activity logs, and performance insights." 
         imageSrc={suppliers.src} 
         imageAlt="Supplier Management" 
         reverse={true} 
@@ -115,8 +109,8 @@ import expenses from "../../public/expenses.png";
 
     <div class="fade-right">
       <ModuleCard 
-        title="Procurement & Orders" 
-        description="Create, approve, and track purchase orders with supplier integration and status updates." 
+        title="Purchase Orders" 
+        description="Generate purchase orders in seconds, track approvals, and monitor delivery status with zero paperwork. Built-in logic reduces errors and speeds up procurement." 
         imageSrc={purchaseOrders.src} 
         imageAlt="Purchase Orders" 
         background="#FFFFFF"
@@ -126,7 +120,7 @@ import expenses from "../../public/expenses.png";
     <div class="fade-left">
       <ModuleCard 
         title="Invoicing & Payments" 
-        description="Monitor issued invoices, payment statuses, and overdue bills with clear analytics." 
+        description="Automate invoicing, track due dates, and keep your cash flow healthy. Get paid faster and stop chasing payments with smart reminders and real-time updates." 
         imageSrc={invoices.src} 
         imageAlt="Invoices & Payments" 
         reverse={true} 
@@ -137,7 +131,7 @@ import expenses from "../../public/expenses.png";
     <div class="fade-right">
       <ModuleCard 
         title="Expense Tracking" 
-        description="Track project expenses, analyse cost categories, and manage budgets with real-time updates." 
+        description="Log, categorize, and monitor expenses as they happen. Spot cost overruns early, stay under budget, and unlock insights to drive smarter financial decisions." 
         imageSrc={expenses.src} 
         imageAlt="Expense Tracking" 
         background="#FFFFFF"
